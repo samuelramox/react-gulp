@@ -2,6 +2,12 @@ import React from 'react';
 
 class Navbar extends React.Component {
   render() {
+    const links = [
+      { title: 'Home', link: '#home' },
+      { title: 'Sobre', link: '#sobre' },
+      { title: 'Contato', link: '#contato' },
+    ];
+
     return (
       <nav>
         <div className={`nav-wrapper ${this.props.backgroundColor}`}>
@@ -10,15 +16,11 @@ class Navbar extends React.Component {
               {this.props.brand}
             </a>
             <ul id='nav-mobile' className='right hide-on-med-and-down'>
-              <li>
-                <a href='sass.html'>Sass</a>
-              </li>
-              <li>
-                <a href='badges.html'>Components</a>
-              </li>
-              <li>
-                <a href='collapsible.html'>JavaScript</a>
-              </li>
+              {links.map((link) => (
+                <li key={link.title}>
+                  <a href={link.link}>{link.title}</a>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
