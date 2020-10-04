@@ -5,9 +5,9 @@ import Title from './components/title';
 
 const App = (
   <div>
-    <Navbar />
+    <Navbar brand='React' backgroundColor='blue' />
     <div className='container'>
-      <Title />
+      <Title title='React with Gulp' />
     </div>
   </div>
 );
