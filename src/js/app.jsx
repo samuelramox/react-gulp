@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Card from './components/card';
+import CardList from './components/card-list';
 import Navbar from './components/navbar';
 import Title from './components/title';
 
@@ -10,9 +10,7 @@ const App = (
     <div className='container'>
       <Title title='React with Gulp' />
       <div className='row'>
-        <div className='col m4'>
-          <Card />
-        </div>
+        <CardList cardPerColumn={3} />
       </div>
     </div>
   </div>
