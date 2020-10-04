@@ -3,15 +3,12 @@ import { string } from 'prop-types';
 
 class Card extends React.Component {
   render() {
-    const { title, description, subtitle } = this.props;
+    const { description, image, subtitle, title } = this.props;
 
     return (
       <div className='card sticky-action'>
         <div className='card-image waves-effect waves-block waves-light'>
-          <img
-            className='activator'
-            src='http://materializecss.com/images/office.jpg'
-          />
+          <img className='activator' src={image} />
         </div>
         <div className='card-content'>
           <span className='card-title activator grey-text text-darken-4'>
@@ -36,9 +33,10 @@ class Card extends React.Component {
 }
 
 Card.propType = {
+  description: string.isRequired,
+  image: string.isRequired,
   title: string.isRequired,
   subtitle: string.isRequired,
-  description: string.isRequired,
 };
 
 export default Card;
