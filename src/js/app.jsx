@@ -51,15 +51,15 @@ const contents = [
 
 const menuLinks = [
   { title: 'Home', link: '#home' },
-  { title: 'Sobre', link: '#sobre' },
-  { title: 'Contato', link: '#contato' },
+  { title: 'About', link: '#about' },
+  { title: 'Contact', link: '#contact' },
 ];
 
 const App = (
   <div>
     <Navbar brand='React' backgroundColor='blue' menu={menuLinks} />
     <div className='container'>
-      <Title title='React with Gulp' />
+      <Title title='React Project' />
       <div className='row'>
         <CardList cardPerColumn={3} contents={contents} />
       </div>
