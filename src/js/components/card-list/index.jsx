@@ -52,7 +52,7 @@ class CardList extends React.Component {
     const { cardPerColumn } = this.props;
 
     return contents.map((content) => (
-      <div className={`col m${12 / cardPerColumn}`}>
+      <div className={`col m${12 / cardPerColumn}`} key={content.title}>
         <Card
           title={content.title}
           subtitle={content.subtitle}
