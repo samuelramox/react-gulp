@@ -1,5 +1,5 @@
 import React from 'react';
-import { arrayOf, obj, shape, string } from 'prop-types';
+import { arrayOf, shape, string } from 'prop-types';
 
 class Navbar extends React.Component {
   constructor(props) {
@@ -7,13 +7,13 @@ class Navbar extends React.Component {
     this.state = { activeMenu: 'Home' };
   }
 
+  onChangeMenu(title) {
+    this.setState({ activeMenu: title });
+  }
+
   render() {
     const { brand, backgroundColor, menu } = this.props;
     const { activeMenu } = this.state;
-
-    const onChangeMenu = (title) => {
-      this.setState({ activeMenu: title });
-    };
 
     return (
       <nav>
@@ -27,7 +27,7 @@ class Navbar extends React.Component {
                 <li
                   key={item.title}
                   className={activeMenu === item.title ? 'active' : ''}
-                  onClick={() => onChangeMenu(item.title)}
+                  onClick={() => this.onChangeMenu(item.title)}
                 >
                   <a href={item.link}>{item.title}</a>
                 </li>
