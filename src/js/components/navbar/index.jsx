@@ -11,6 +11,14 @@ class Navbar extends React.Component {
     this.setState({ activeMenu: title });
   }
 
+  componentDidMount() {
+    const initialMenu = this.props.menu[0].title;
+
+    if (initialMenu !== this.state.activeMenu) {
+      this.setState({ activeMenu: initialMenu });
+    }
+  }
+
   render() {
     const { brand, backgroundColor, menu } = this.props;
     const { activeMenu } = this.state;
