@@ -1,15 +1,19 @@
 import React from 'react';
-import { string } from 'prop-types';
+import { arrayOf, obj, shape, string } from 'prop-types';
 
 class Navbar extends React.Component {
-  render() {
-    const { brand, backgroundColor } = this.props;
+  constructor(props) {
+    super(props);
+    this.state = { activeMenu: 'Home' };
+  }
 
-    const links = [
-      { title: 'Home', link: '#home' },
-      { title: 'Sobre', link: '#sobre' },
-      { title: 'Contato', link: '#contato' },
-    ];
+  render() {
+    const { brand, backgroundColor, menu } = this.props;
+    const { activeMenu } = this.state;
+
+    const onChangeMenu = (title) => {
+      this.setState({ activeMenu: title });
+    };
 
     return (
       <nav>
@@ -19,9 +23,13 @@ class Navbar extends React.Component {
               {brand}
             </a>
             <ul id='nav-mobile' className='right hide-on-med-and-down'>
-              {links.map((link) => (
-                <li key={link.title}>
-                  <a href={link.link}>{link.title}</a>
+              {menu.map((item) => (
+                <li
+                  key={item.title}
+                  className={activeMenu === item.title ? 'active' : ''}
+                  onClick={() => onChangeMenu(item.title)}
+                >
+                  <a href={item.link}>{item.title}</a>
                 </li>
               ))}
             </ul>
@@ -32,13 +40,19 @@ class Navbar extends React.Component {
   }
 }
 
+const menuItem = shape({
+  title: string.isRequired,
+  link: string.isRequired,
+});
+
 Navbar.defaultProps = {
   backgroundColor: null,
 };
 
 Navbar.propTypes = {
-  brand: string.isRequired,
   backgroundColor: string,
+  brand: string.isRequired,
+  menu: arrayOf(menuItem).isRequired,
 };
 
 export default Navbar;

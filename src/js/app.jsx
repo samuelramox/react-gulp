@@ -49,9 +49,15 @@ const contents = [
   },
 ];
 
+const menuLinks = [
+  { title: 'Home', link: '#home' },
+  { title: 'Sobre', link: '#sobre' },
+  { title: 'Contato', link: '#contato' },
+];
+
 const App = (
   <div>
-    <Navbar brand='React' backgroundColor='blue' />
+    <Navbar brand='React' backgroundColor='blue' menu={menuLinks} />
     <div className='container'>
       <Title title='React with Gulp' />
       <div className='row'>
