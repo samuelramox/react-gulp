@@ -16,6 +16,7 @@
     "browser-sync": "^2.26.12",
     "gulp": "^3.9.1",
     "gulp-react-easy": "^0.1.9",
+    "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   }

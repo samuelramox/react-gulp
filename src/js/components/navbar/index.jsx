@@ -1,7 +1,10 @@
 import React from 'react';
+import { string } from 'prop-types';
 
 class Navbar extends React.Component {
   render() {
+    const { brand, backgroundColor } = this.props;
+
     const links = [
       { title: 'Home', link: '#home' },
       { title: 'Sobre', link: '#sobre' },
@@ -10,10 +13,10 @@ class Navbar extends React.Component {
 
     return (
       <nav>
-        <div className={`nav-wrapper ${this.props.backgroundColor}`}>
+        <div className={`nav-wrapper ${backgroundColor}`}>
           <div className='container'>
             <a href='#' className='brand-logo'>
-              {this.props.brand}
+              {brand}
             </a>
             <ul id='nav-mobile' className='right hide-on-med-and-down'>
               {links.map((link) => (
@@ -28,5 +31,14 @@ class Navbar extends React.Component {
     );
   }
 }
+
+Navbar.defaultProps = {
+  backgroundColor: null,
+};
+
+Navbar.propTypes = {
+  brand: string.isRequired,
+  backgroundColor: string,
+};
 
 export default Navbar;
