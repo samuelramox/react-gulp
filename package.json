@@ -1,0 +1,19 @@
+{
+  "name": "react-gulp",
+  "version": "1.0.0",
+  "description": "React with gulp project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react",
+    "gulp"
+  ],
+  "author": "Samuel Ramos",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-react-easy": "^0.1.9"
+  }
+}
